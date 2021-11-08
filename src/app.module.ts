@@ -7,11 +7,8 @@ import { AppService } from './app.service';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      url: process.env.DATABASE_URL,
       port: 5432,
-      username: 'postgres',
-      password: 'postgres',
-      database: 'datcompagny',
       autoLoadEntities: true,
       synchronize: true,
     }),
