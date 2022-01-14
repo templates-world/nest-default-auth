@@ -1,18 +1,8 @@
-import {
-  Body,
-  Controller,
-  Delete,
-  Get,
-  Param,
-  Patch,
-  UseInterceptors,
-} from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch } from '@nestjs/common';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { PasswordInterceptor } from './interceptors/password.interceptor';
 import { UsersService } from './users.service';
 
 @Controller('users')
-@UseInterceptors(PasswordInterceptor)
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
